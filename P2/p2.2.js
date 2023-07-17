@@ -1,76 +1,56 @@
-<<<<<<< HEAD
 const http = require('http');
 
-const hostname = 'localhost';
-const port = 3000;
-
 const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    if (req.method === 'PUT') {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/plain');
-      res.end('Hello, World!');
-    } else {
-      res.statusCode = 405; // Method Not Allowed
-      res.setHeader('Allow', 'PUT');
-      res.end();
-    }
-  } else if (req.url === '/json') {
-    if (req.method === 'PUT') {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'application/json');
-      const json = JSON.stringify({ message: 'Hello, World!' });
-      res.end(json);
-    } else {
-      res.statusCode = 405;
-      res.setHeader('Allow', 'PUT');
-      res.end();
-    }
-  } else {
-    res.statusCode = 404; // Not Found
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('404 Not Found');
+  // GET request handler
+  if (req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, GET request!');
+  }
+  // POST request handler
+  else if (req.method === 'POST') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, POST request!');
+  }
+  // PUT request handler
+  else if (req.method === 'PUT') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, PUT request!');
+  }
+  // DELETE request handler
+  else if (req.method === 'DELETE') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, DELETE request!');
+  }
+
+ else if (req.method === 'PATCH') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, PATCH request!');
+  }
+  // HEAD request handler
+  else if (req.method === 'HEAD') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, HEAD request!');
+  }
+
+  // OPTIONS request handler
+  else if (req.method === 'OPTIONS') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, OPTIONS request!');
+  }
+
+  // PROPFIND request handler
+  else if (req.method === 'PROPFIND') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, PROPFIND request!');
+  }
+
+  // Invalid request method
+  else {
+    res.writeHead(400, { 'Content-Type': 'text/plain' });
+    res.end('Invalid request method');
   }
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/json`);
-=======
-const http = require('http');
-
-const hostname = 'localhost';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    if (req.method === 'PUT') {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/plain');
-      res.end('Hello, World!');
-    } else {
-      res.statusCode = 405; // Method Not Allowed
-      res.setHeader('Allow', 'PUT');
-      res.end();
-    }
-  } else if (req.url === '/json') {
-    if (req.method === 'PUT') {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'application/json');
-      const json = JSON.stringify({ message: 'Hello, World!' });
-      res.end(json);
-    } else {
-      res.statusCode = 405;
-      res.setHeader('Allow', 'PUT');
-      res.end();
-    }
-  } else {
-    res.statusCode = 404; // Not Found
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('404 Not Found');
-  }
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/json`);
->>>>>>> bb54b8fda2c81d2db87af37fa0e097465b310460
+server.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });
