@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "fund": "^1.0.0",
+    "upper-case": "^2.0.2"
+  }
+}
