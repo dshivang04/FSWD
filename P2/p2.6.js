@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 
 const file1Path = "file1.txt";
