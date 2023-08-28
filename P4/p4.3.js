@@ -7,7 +7,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-// Function to check if two file paths refer to the same file
 function checkSameFile(path1, path2) {
   const absolutePath1 = path.resolve(path1);
   const absolutePath2 = path.resolve(path2);
@@ -20,19 +19,15 @@ function checkSameFile(path1, path2) {
   }
 }
 
-// Function to extract and display the file extension from a file path
 function extractFileExtension(filePath) {
   const fileExtension = path.extname(filePath);
   console.log('File Extension:', fileExtension);
 }
 
-// Get user input
 rl.question('Enter the first file path: ', (path1) => {
   rl.question('Enter the second file path: ', (path2) => {
-    // Check if the file paths refer to the same file
     checkSameFile(path1, path2);
 
-    // Example usage of extractFileExtension function
     const exampleFilePath = '/path/to/example/file1.txt';
     extractFileExtension(exampleFilePath);
 
