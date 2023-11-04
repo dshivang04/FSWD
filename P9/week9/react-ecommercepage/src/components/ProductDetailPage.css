@@ -1,0 +1,34 @@
+/* ProductDetailPage.css */
+
+.product-detail {
+  text-align: center;
+  padding: 20px;
+}
+
+.product-detail img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.product-detail h2 {
+  font-size: 1.5rem;
+}
+
+.product-detail p {
+  margin: 5px 0;
+}
+
+.product-detail button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-detail button:hover {
+  background-color: #0056b3;
+}

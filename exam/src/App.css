@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+}
+
+.App {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.product-list,
+.cart {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.product-list h2,
+.cart h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.product-list ul,
+.cart ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-list li,
+.cart li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.product-list button,
+.cart button {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.cart total {
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+  .product-list,
+  .cart {
+    width: 100%;
+  }
+}
